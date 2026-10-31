@@ -4,7 +4,8 @@
 -- Waits until the game has loaded, then runs the hub's Luarmor loader. Luarmor's own loader
 -- sometimes fails right after joining (":8: attempt to perform arithmetic (mul) on nil and
 -- number"), or returns without starting it: when the hub has not started, it is tried again a
--- moment later (3 tries). Each step is printed in the F9 console as [MTwin HUB loader].
+-- moment later, again and again (up to a minute apart). Each step is printed in the F9 console
+-- as [MTwin HUB loader].
 -- No key or code of the hub is in this file.
 if not game:IsLoaded() then game.Loaded:Wait() end
 local Players = game:GetService("Players")
@@ -12,6 +13,11 @@ while not Players.LocalPlayer do task.wait() end
 task.wait(2)
 
 local G = getgenv and getgenv() or _G
+
+-- autoexec and a rejoin's queued loader can both start: only one of them goes on
+if G.MTwinLoaderBusy then return end
+G.MTwinLoaderBusy = true
+
 local Url = "https://api.luarmor.net/files/v4/loaders/fd1cff7baff01ea99d9e46f7aee17803.lua"
 
 -- the key, wherever this executor kept `script_key = ...`: where Luarmor's loader looks for it
@@ -27,9 +33,13 @@ local function Log(Text)
 	print("[MTwin HUB loader] " .. Text)
 end
 
-for Try = 1, 3 do
+-- nobody may be watching (24/7 runs): keep trying, a little slower each time (up to a minute)
+local Try = 0
+
+while true do
+	Try += 1
 	G.MTwinHubStarted = nil
-	Log("starting (try " .. Try .. "/3), game " .. tostring(game.PlaceId))
+	Log("starting (try " .. Try .. "), game " .. tostring(game.PlaceId))
 
 	local Ok, Err = pcall(function()
 		loadstring(game:HttpGet(Url))()
@@ -44,15 +54,19 @@ for Try = 1, 3 do
 
 	if G.MTwinHubStarted then
 		Log("hub started")
+		G.MTwinLoaderBusy = nil
 		return
 	end
 
-	warn("[MTwin HUB loader] the hub did not start (try " .. Try .. "/3): " .. (Ok and "Luarmor returned without starting it" or tostring(Err)))
-	if Try < 3 then task.wait(3 * Try) end
-end
+	warn("[MTwin HUB loader] the hub did not start (try " .. Try .. "): " .. (Ok and "Luarmor returned without starting it" or tostring(Err)))
 
-pcall(function()
-	game:GetService("StarterGui"):SetCore("SendNotification", {
-		Title = "MTwin HUB", Text = "Could not start - run the loader again", Duration = 10,
-	})
-end)
+	if Try == 3 then
+		pcall(function()
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "MTwin HUB", Text = "Could not start yet - still trying by itself", Duration = 10,
+			})
+		end)
+	end
+
+	task.wait(math.min(5 * 2 ^ (math.min(Try, 5) - 1), 60))
+end
