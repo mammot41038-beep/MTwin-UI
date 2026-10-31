@@ -5,7 +5,7 @@
 -- sometimes fails right after joining (":8: attempt to perform arithmetic (mul) on nil and
 -- number"), or returns without starting it: when the hub has not started, it is tried again a
 -- moment later, again and again (up to a minute apart). Each step is printed in the F9 console
--- as [MTwin HUB loader].
+-- (F9 only) as [MTwin HUB loader].
 -- No key or code of the hub is in this file.
 if not game:IsLoaded() then game.Loaded:Wait() end
 local Players = game:GetService("Players")
@@ -29,8 +29,13 @@ pcall(function()
 	end
 end)
 
+-- the game's own print / warn: the lines go to the F9 console only, not the executor's window
+local Env = getrenv and getrenv() or {}
+local GamePrint = type(Env.print) == "function" and Env.print or print
+local GameWarn = type(Env.warn) == "function" and Env.warn or warn
+
 local function Log(Text)
-	print("[MTwin HUB loader] " .. Text)
+	GamePrint("[MTwin HUB loader] " .. Text)
 end
 
 -- nobody may be watching (24/7 runs): keep trying, a little slower each time (up to a minute)
@@ -58,7 +63,7 @@ while true do
 		return
 	end
 
-	warn("[MTwin HUB loader] the hub did not start (try " .. Try .. "): " .. (Ok and "Luarmor returned without starting it" or tostring(Err)))
+	GameWarn("[MTwin HUB loader] the hub did not start (try " .. Try .. "): " .. (Ok and "Luarmor returned without starting it" or tostring(Err)))
 
 	if Try == 3 then
 		pcall(function()
