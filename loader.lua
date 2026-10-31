@@ -3,7 +3,8 @@
 --   loadstring(game:HttpGet("https://raw.githubusercontent.com/mammot41038-beep/MTwin-UI/main/loader.lua"))()
 -- Waits until the game has loaded, then runs the hub's Luarmor loader. Luarmor's own loader
 -- sometimes fails right after joining (":8: attempt to perform arithmetic (mul) on nil and
--- number"): when that happens before the hub has started, it is tried again a moment later.
+-- number"), or returns without starting it: when the hub has not started, it is tried again a
+-- moment later (3 tries). Each step is printed in the F9 console as [MTwin HUB loader].
 -- No key or code of the hub is in this file.
 if not game:IsLoaded() then game.Loaded:Wait() end
 local Players = game:GetService("Players")
@@ -22,17 +23,31 @@ pcall(function()
 	end
 end)
 
+local function Log(Text)
+	print("[MTwin HUB loader] " .. Text)
+end
+
 for Try = 1, 3 do
 	G.MTwinHubStarted = nil
+	Log("starting (try " .. Try .. "/3), game " .. tostring(game.PlaceId))
 
 	local Ok, Err = pcall(function()
 		loadstring(game:HttpGet(Url))()
 	end)
 
-	-- done, or the hub itself is running (an error after that is the game script's, not Luarmor's)
-	if Ok or G.MTwinHubStarted then return end
+	-- the hub marks itself started at its first line. Luarmor can also fail without an error we
+	-- can catch (in its own thread): give it a moment, and only a hub that never started is retried
+	if Ok and not G.MTwinHubStarted then
+		local Waited = 0
+		while not G.MTwinHubStarted and Waited < 20 do Waited += task.wait(0.5) end
+	end
 
-	warn("[MTwin HUB] loader failed (try " .. Try .. "/3): " .. tostring(Err))
+	if G.MTwinHubStarted then
+		Log("hub started")
+		return
+	end
+
+	warn("[MTwin HUB loader] the hub did not start (try " .. Try .. "/3): " .. (Ok and "Luarmor returned without starting it" or tostring(Err)))
 	if Try < 3 then task.wait(3 * Try) end
 end
 
