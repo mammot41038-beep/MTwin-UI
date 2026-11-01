@@ -14,9 +14,27 @@ task.wait(2)
 
 local G = getgenv and getgenv() or _G
 
--- autoexec and a rejoin's queued loader can both start: only one of them goes on
-if G.MTwinLoaderBusy then return end
-G.MTwinLoaderBusy = true
+-- the game's own print / warn: the lines go to the F9 console only, not the executor's window
+local Env = getrenv and getrenv() or {}
+local GamePrint = type(Env.print) == "function" and Env.print or print
+local GameWarn = type(Env.warn) == "function" and Env.warn or warn
+
+local function Log(Text)
+	GamePrint("[MTwin HUB loader] " .. Text)
+end
+
+-- autoexec and a rejoin's queued loader can both start at once: the second one steps aside.
+-- A copy that started over 45 s ago and is still trying is taken over instead (running it by
+-- hand always works; the older copy stops at its next try)
+local Busy = rawget(G, "MTwinLoaderBusy")
+
+if type(Busy) == "number" and os.clock() - Busy < 45 then
+	Log("another copy is starting the hub already")
+	return
+end
+
+local Token = {}
+G.MTwinLoaderBusy, G.MTwinLoaderToken = os.clock(), Token
 
 local Url = "https://api.luarmor.net/files/v4/loaders/fd1cff7baff01ea99d9e46f7aee17803.lua"
 
@@ -29,19 +47,13 @@ pcall(function()
 	end
 end)
 
--- the game's own print / warn: the lines go to the F9 console only, not the executor's window
-local Env = getrenv and getrenv() or {}
-local GamePrint = type(Env.print) == "function" and Env.print or print
-local GameWarn = type(Env.warn) == "function" and Env.warn or warn
-
-local function Log(Text)
-	GamePrint("[MTwin HUB loader] " .. Text)
-end
-
 -- nobody may be watching (24/7 runs): keep trying, a little slower each time (up to a minute)
 local Try = 0
 
 while true do
+	-- a newer copy took over
+	if G.MTwinLoaderToken ~= Token then return end
+
 	Try += 1
 	G.MTwinHubStarted = nil
 	Log("starting (try " .. Try .. "), game " .. tostring(game.PlaceId))
@@ -59,7 +71,7 @@ while true do
 
 	if G.MTwinHubStarted then
 		Log("hub started")
-		G.MTwinLoaderBusy = nil
+		if G.MTwinLoaderToken == Token then G.MTwinLoaderBusy = nil end
 		return
 	end
 
