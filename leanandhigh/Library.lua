@@ -2908,9 +2908,18 @@ function Library:SetIconModule(module: IconModule)
 end
 
 local OnlineFetchIcons, OnlineIcons = pcall(function()
-    return (loadstring(
-        game:HttpGet("https://raw.githubusercontent.com/mstudio45/lucide-roblox-direct/refs/heads/main/source.lua")
-    ) :: () -> IconModule)()
+    -- MTwin HUB: our pinned icon set first (the original's shared sprite sheets got mixed up), the original second
+    local Source
+
+    pcall(function()
+        Source = game:HttpGet("https://raw.githubusercontent.com/mammot41038-beep/MTwin-UI/main/icons/lucide.lua")
+    end)
+
+    if type(Source) ~= "string" or not Source:find("GetAsset", 1, true) then
+        Source = game:HttpGet("https://raw.githubusercontent.com/mstudio45/lucide-roblox-direct/refs/heads/main/source.lua")
+    end
+
+    return (loadstring(Source) :: () -> IconModule)()
 end)
 if OnlineFetchIcons and OnlineIcons then
     Library:SetIconModule(OnlineIcons)
