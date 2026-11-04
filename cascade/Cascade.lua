@@ -1,6 +1,6 @@
 -- MTwin HUB build of Cascade (MIT, see LICENSE): made by tools/cascade/sync.py in the
 -- mammothAT repo. Changes: icons from MTwin-UI/icons, FarmStats SetSession / SessionText /
--- StartedText, text material counts, Window Scale, Configs box only with a config,
+-- StartedText, text material counts, lists under the button, Window Scale, Configs box only with a config,
 -- Dashboard without Updates. Do not edit by hand: rerun the tool on a new upstream build.
 --!nolint
 --!nocheck
@@ -7940,7 +7940,7 @@ Parent then return end local au=aj.CurrentCamera if not au then return end if
 self.AutoScroll then self:ScrollToAnchorOption()end local av,aw,ax,ay,az,b=aq.
 AbsolutePosition,aq.AbsoluteSize,ar.AbsolutePosition,as.AbsolutePosition,ar.
 AbsoluteSize,au.ViewportSize local c,d,e,f=av.X+aw.X-az.X+ae,av.Y+aw.Y+self.Gap,
-self:GetAnchorOffsets()if self.AnchorMode=='SelectedLabel'then local g,h=self:
+self:GetAnchorOffsets()if self.AnchorMode=='SelectedLabel:off'then local g,h=self:
 GetAnchorElement(),self:GetOptionLabel(self:GetAnchorOption())if g and h then
 local i=h.AbsolutePosition-ax c=g.AbsolutePosition.X-i.X d=g.AbsolutePosition.Y-
 i.Y elseif g then c=g.AbsolutePosition.X+ae d=g.AbsolutePosition.Y end end c+=e
