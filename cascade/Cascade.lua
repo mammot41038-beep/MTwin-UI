@@ -8980,7 +8980,7 @@ aa.__window or aa local ag,ah=af.__app,aa if ab.Section~=false and aa.Type==
 'General',Disclosure=false}ah.LayoutOrder=100000 end local ai=ah:Tab{Title=ab.
 Title or'Settings',Icon=ab.Icon or'settings',Selected=ab.Selected==true}local aj
 =ai:Groupbox{Side='Left',Title='Interface',Subtitle=
-'Look and behaviour of the menu',Icon='palette',Collapsible=false}if ag then
+'Look and behaviour of the menu',Icon='palette',Collapsible=false}ai.Interface=aj if ag then
 local ak,al={'Dark','Light'},(ag.Theme and ag.Theme._id=='Light')and'Light'or
 'Dark'aj:Row{Title='Theme'}:Right():RadioButtonGroup{Flag=ab.ThemeFlag or
 'UI_Theme',Options=ak,Value=table.find(ak,al),ValueChanged=function(am,an)local
