@@ -1,0 +1,4 @@
+# Anime Adventures codes for MTwin HUB "Auto Redeem Codes": one code per line, text after # is a note.
+# Add a new code here and every customer's script uses it within 30 minutes (no new script needed).
+# Codes already used on the account are skipped; a code that fails is tried once per session.
+AACOMEBACK

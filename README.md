@@ -9,6 +9,7 @@ Public files for MTwin HUB. No keys and no game code live here.
 | `leanandhigh/` | Obsidian UI library with farm stats, from github.com/leanandhigh/Obsidian (MIT, see `leanandhigh/LICENSE`) |
 | `cascade/` | Cascade UI library (the new menus), MTwin HUB build of github.com/leanandhigh/Cascade (MIT, see `cascade/LICENSE`) |
 | `fonts/` | MTwin Thai Looped: Noto Sans Thai Looped (Thai with heads) + Noto Sans (Latin) merged, for Thai menu text (SIL OFL 1.1, see `fonts/OFL.txt`) |
+| `codes/` | code lists for the games' Auto Redeem Codes (one code per line, read every 30 minutes) |
 | `icons/` | Lucide icons for the menus, from github.com/mstudio45/lucide-roblox-direct (MIT, see `icons/LICENSE`) |
 
 Customers run:
