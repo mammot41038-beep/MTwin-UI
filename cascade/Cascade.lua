@@ -1,6 +1,6 @@
 -- MTwin HUB build of Cascade (MIT, see LICENSE): made by tools/cascade/sync.py in the
 -- mammothAT repo. Changes: icons from MTwin-UI/icons, FarmStats SetSession / SessionText /
--- StartedText, text material counts, Configs box only with a config,
+-- StartedText, text material counts, Window Scale, Configs box only with a config,
 -- Dashboard without Updates. Do not edit by hand: rerun the tool on a new upstream build.
 --!nolint
 --!nocheck
@@ -6794,7 +6794,7 @@ __container or b.__instance or b local t,u,v,w,x,y,z,A=o'Frame'{Name='Window',
 BackgroundTransparency=1,BorderSizePixel=0,Size=UDim2.fromScale(1,1),AnchorPoint
 =Vector2.new(0.5,0.5),Position=UDim2.fromScale(0.5,0.5),Parent=s}.__instance,{}c
 =c or{}local B=c.Mobile if B==nil then B=a.a().IsMobile()end local C=B and(c.
-MobileScale or 0.8)or 1 c.Size=c.Size or(B and UDim2.fromOffset(620,380)or UDim2
+MobileScale or 0.8)or(c.Scale or 1) c.Size=c.Size or(B and UDim2.fromOffset(620,380)or UDim2
 .fromOffset(850,530))if B then local D=workspace.CurrentCamera local E=D and D.
 ViewportSize or Vector2.new(1280,720)local F,G=math.floor((E.X-24)/C),math.
 floor((E.Y-24)/C)c.Size=UDim2.fromOffset(math.min(c.Size.X.Offset,F),math.min(c.
