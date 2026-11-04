@@ -7,6 +7,7 @@ Public files for MTwin HUB. No keys and no game code live here.
 | `loader.lua` | Customer loader |
 | `uhfork/` | Obsidian UI library, from github.com/uhfork/Obsidian (MIT, see `uhfork/LICENSE`) |
 | `leanandhigh/` | Obsidian UI library with farm stats, from github.com/leanandhigh/Obsidian (MIT, see `leanandhigh/LICENSE`) |
+| `cascade/` | Cascade UI library (the new menus), MTwin HUB build of github.com/leanandhigh/Cascade (MIT, see `cascade/LICENSE`) |
 | `icons/` | Lucide icons for the menus, from github.com/mstudio45/lucide-roblox-direct (MIT, see `icons/LICENSE`) |
 
 Customers run:
