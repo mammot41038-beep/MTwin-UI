@@ -1,6 +1,7 @@
 -- MTwin HUB build of Cascade (MIT, see LICENSE): made by tools/cascade/sync.py in the
 -- mammothAT repo. Changes: icons from MTwin-UI/icons, FarmStats SetSession / SessionText /
--- StartedText, text material counts. Do not edit by hand: rerun the tool on a new upstream build.
+-- StartedText, text material counts, Configs box only with a config,
+-- Dashboard without Updates. Do not edit by hand: rerun the tool on a new upstream build.
 --!nolint
 --!nocheck
 --!optimize 2
@@ -8613,8 +8614,7 @@ end table.insert(ah,{Label='Game',Value=function()return af end})table.insert(ah
 ,Value=tostring(ab.Updated)})elseif ab.Version then table.insert(ah,{Label=
 'Version',Value=tostring(ab.Version)})end for ai,aj in ipairs(typeof(ab.Info)==
 'table'and ab.Info or{})do table.insert(ah,aj)end ad.Info=ac:InfoCard{Title=ab.
-InfoTitle or'Information',Icon='info',Items=ah}end local af=ac:PageSection{Title
-=ab.UpdatesTitle or'Updates'}ad.Updates=af:UpdateLog{Title=ab.LogsTitle or
+InfoTitle or'Information',Icon='info',Items=ah}end local af=(ab.Logs==false)and{UpdateLog=function()return{Add=function()end,Clear=function()end}end}or ac:PageSection{Title=ab.UpdatesTitle or'Updates'}ad.Updates=af:UpdateLog{Title=ab.LogsTitle or
 "What's new",Subtitle=ab.LogsSubtitle or(ab.Updated and('Updated '..tostring(ab.
 Updated)))or(ab.Version and('Version '..tostring(ab.Version))or nil),Preview=ab.
 Preview or math.huge,Entries=ab.Logs or{}}local ag=ab.Links or{}if ab.Discord
@@ -9006,8 +9006,7 @@ end}end if ab.FarmHud then aj:Row{Title='Show farm HUD'}:Right():Toggle{Flag=
 'UI_FarmHud',Value=ab.FarmHud.Visible~=false,ValueChanged=function(am,an)ab.
 FarmHud.Visible=an end}end if af.Unload and af.CanUnload~=false then aj:Row{
 Title='Unload',Subtitle='Removes the whole UI'}:Right():Button{Label='Unload',
-State='Destructive',Pushed=function()af:Unload()end}end ai:ConfigManager{Side=
-'Right',Manager=af.Configs}return ai end end function a.am()local ab=a.cache.am
+State='Destructive',Pushed=function()af:Unload()end}end if af.Configs then ai:ConfigManager{Side='Right',Manager=af.Configs}end return ai end end function a.am()local ab=a.cache.am
 if not ab then ab={c=aa()}a.cache.am=ab end return ab.c end end do local aa=
 function()a.b()return function(aa,ab)local ac,ad=a.d(),a.c()local ae,af,ag,ah=ac
 .Create,aa.__container or aa.__instance or aa,{},{}ab=ab or{}ab.Buttons=ab.
