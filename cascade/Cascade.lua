@@ -1,6 +1,6 @@
 -- MTwin HUB build of Cascade (MIT, see LICENSE): made by tools/cascade/sync.py in the
 -- mammothAT repo. Changes: icons from MTwin-UI/icons, FarmStats SetSession / SessionText /
--- StartedText. Do not edit by hand: rerun the tool on a new upstream build.
+-- StartedText, text material counts. Do not edit by hand: rerun the tool on a new upstream build.
 --!nolint
 --!nocheck
 --!optimize 2
@@ -9487,7 +9487,7 @@ Secondary[1].Value A.TextTransparency=aq.Text.Secondary[2].Value end end,
 function(z)return tostring(z.Name)..'|'..tostring(z.Icon)end local C,D,E,F,G,H=
 function()local C=#av==#at and#av>0 if C then for D,E in ipairs(av)do if at[D].
 Key~=B(E)then C=false break end end end if C then for D,E in ipairs(av)do local
-F=at[D]F.Count.Text=aj.FormatNumber(tonumber(E.Count)or 0,'comma')..' owned'A(F.
+F=at[D]F.Count.Text=(type(E.Count)=='string' and E.Count or aj.FormatNumber(tonumber(E.Count)or 0,'comma')..' owned')A(F.
 Pill,F.Gain,tonumber(E.Gain)or 0)end return end for D,E in ipairs(au)do E:
 Destroy()end table.clear(au)table.clear(at)for D,E in ipairs(av)do local F=(i{
 Name='Material',LayoutOrder=D,Parent=u,ak'UIPadding'{PaddingBottom=UDim.new(0,10
@@ -9509,8 +9509,7 @@ UDim.new(1,0)},e{Name='Gain',Size=UDim2.fromOffset(0,22),Text='',TextSize=12}}}.
 __instance)local G,H=(F:FindFirstChild'IconTile':FindFirstChild'Icon'),E.Icon or
 ad.Icon if H~=nil then ai.Apply(G,H,nil,28)end local I=(F:FindFirstChild'Pill')
 local J=(I:FindFirstChild'Gain')ah.FitText(J,8,22)local K={Key=B(E),Count=(F:
-FindFirstChild'Count'),Pill=I,Gain=J}K.Count.Text=aj.FormatNumber(tonumber(E.
-Count)or 0,'comma')..' owned'A(I,J,tonumber(E.Gain)or 0)at[D]=K table.insert(au,
+FindFirstChild'Count'),Pill=I,Gain=J}K.Count.Text=(type(E.Count)=='string' and E.Count or aj.FormatNumber(tonumber(E.Count)or 0,'comma')..' owned')A(I,J,tonumber(E.Gain)or 0)at[D]=K table.insert(au,
 F)end ar.Empty.Visible=#av==0 u.Visible=#av>0 ar.MaterialsCount.Text=#av>0 and(#
 av..' tracked')or''end,function()local C=aq.Controls.Status[az]ar.StatusDot.
 BackgroundColor3=typeof(ad.StatusColor)=='Color3'and ad.StatusColor or(C and C[1
