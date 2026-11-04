@@ -9564,7 +9564,7 @@ ResetSession=c.Reset c.SetSession=function(O,P,Q)if typeof(P)=='number' then loc
 .Materials or{}local O=ad.Visible==true ad.Visible=nil af.Apply(ad,c)if ad.Icon
 ==nil then c.Icon=nil end z()C()if O then I(true)end return c end end function a
 .ar()local ab=a.cache.ar if not ab then ab={c=aa()}a.cache.ar=ab end return ab.c
-end end do local aa=function()local aa,ab,ac=a.b(),260,20 return function(ad,ae)
+end end do local aa=function()local aa,ab,ac=a.b(),300,20 return function(ad,ae)
 local af,ag,ah,ai,aj,ak,al=a.d(),a.c(),a.a(),a.o(),a.g(),a.ad(),a.aq()local am,
 an,ao,ap,aq,ar,as,at,au,av,aw,ax,ay=af.Create,Font.new(
 'rbxassetid://12187365364',Enum.FontWeight.Medium,Enum.FontStyle.Normal),Font.
@@ -9641,8 +9641,7 @@ ZIndex=50,am'ImageLabel'{Name='Icon',AnchorPoint=Vector2.new(0,0.5),
 BackgroundTransparency=1,Position=UDim2.fromScale(0,0.5),ScaleType=Enum.
 ScaleType.Fit,Size=UDim2.fromOffset(14,14),ZIndex=50,__dynamicKeys={ImageColor3=
 aq.Controls.Selection[1]}},c{Name='Label',AnchorPoint=Vector2.new(0,0.5),
-FontFace=an,Position=UDim2.new(0,22,0.5,0),Size=UDim2.new(0.45,-22,0,16),Text=h.
-Label,TextSize=13,TextTruncate=Enum.TextTruncate.AtEnd,TextXAlignment=Enum.
+FontFace=an,Position=UDim2.new(0,22,0.5,0),Size=UDim2.new(0.45,-22,0,16),Text=h.Label,TextSize=13,TextTruncate=Enum.TextTruncate.None,TextXAlignment=Enum.
 TextXAlignment.Left,__dynamicKeys={TextColor3=aq.Text.Secondary[1],
 TextTransparency=aq.Text.Secondary[2]}},c{Name='Value',AnchorPoint=Vector2.new(1
 ,0.5),FontFace=ao,Position=UDim2.fromScale(1,0.5),RichText=true,Size=UDim2.new(
