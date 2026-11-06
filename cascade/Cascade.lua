@@ -7056,7 +7056,7 @@ local ao={}for ap,aq in ipairs(an)do if aq:IsA'GuiObject'then ao[aq]=aq.Visible
 end end al[am]=ao end,function(am,an)local ao=al[am]if not ao then return end
 for ap,aq in ipairs(an)do if aq:IsA'GuiObject'then aq.Visible=ao[aq]~=false end
 end end ak:GetPropertyChangedSignal'Text':Connect(function()local ao,ap,aq={},{}
-,u.Content:FindFirstChildOfClass'ScrollingFrame'if not aq then return end local
+,(function()for _,P in ipairs(u.Content:GetChildren())do if P:IsA'ScrollingFrame'and P.Visible then return P end end end)()if not aq then return end local
 ar=aq:GetDescendants()if not al[aq]then am(aq,ar)end local as=ak.Text:lower()if
 as==''then an(aq,ar)return end for at,au in ipairs(ar)do if au:IsA'GuiObject'
 then local av=au:GetAttribute'SearchIndex'if typeof(av)=='string'and av:lower():
@@ -7253,7 +7253,7 @@ Primary[1].Value ai.Title.TextTransparency=ap and aa.Theme.Text.SelectionPrimary
 [2].Value or aa.Theme.Text.Primary[2].Value ai.Symbol.ImageColor3=ap and aa.
 Theme.Text.SelectionPrimary[1].Value or aa.Theme.Controls.Selection[1].Value ai.
 Symbol.ImageTransparency=ap and aa.Theme.Text.SelectionPrimary[2].Value or aa.
-Theme.Controls.Selection[2].Value ai.Page.Parent=ap and ag and ag.__container or
+Theme.Controls.Selection[2].Value ai.Page.Visible=ap==true ai.Page.Parent=ag and ag.__container or
 nil if ap and ag and ag.__pageTitle then ag.__pageTitle(ab.Title)end end},ai.
 Body)ao.Navigate=function(ap,aq)if not aq or type(aq)~='table'or aq.Type~='Page'
 then warn'Tab:Navigate expects a Page component.'return end local ar=aq.
