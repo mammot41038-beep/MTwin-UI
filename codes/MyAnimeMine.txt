@@ -1,0 +1,11 @@
+# My Anime Mine codes for MTwin HUB (free rewards / codes): one code per line, text after # is a note.
+# Add a new code here and every customer's script uses it within 30 minutes (no new script needed).
+# New codes are tried first; codes already used on the account are skipped, a refused one is tried again after a new zone.
+ACES        # 2 Enchanted Dice
+AZURE       # 1 Summon Scroll
+BLOSSOM     # Autumn Scroll, Mutation Luck Potion
+PETALFALL   # 2 Enchanted Dice
+ONANDON     # Character Luck Potion, Enchanted Dice, Summon Scroll
+FEASTS
+MOONRISE
+HALLOWKEEP
