@@ -30,15 +30,15 @@ local Places = {
 	[8349889591] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Anime Adventures
 	[10098525303] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Anime Adventures
 	[14229762361] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Anime Adventures
-	[137151641329864] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- RoWorld
-	[120219252362013] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Throw Food For Animals
-	[72858262610964] = "https://api.luarmor.net/files/v4/loaders/ace673399f74082818e13b3a038e796b.lua", -- Tap Simulator REBORN
 	[114326934417838] = "https://api.luarmor.net/files/v4/loaders/ace673399f74082818e13b3a038e796b.lua", -- Break and Steal an Egg
 	[97617452700163] = "https://api.luarmor.net/files/v4/loaders/ace673399f74082818e13b3a038e796b.lua", -- +1 Anime Eyes
-	[113290951185459] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- Anime Dice
+	[120219252362013] = "https://api.luarmor.net/files/v4/loaders/ace673399f74082818e13b3a038e796b.lua", -- Throw Food For Animals
 	[79546208627805] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- 99 Nights in the Forest
 	[126509999114328] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- 99 Nights in the Forest
 	[142823291] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- Murder Mystery 2
+	[113290951185459] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- Anime Dice
+	[72858262610964] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- Tap Simulator REBORN
+	[137151641329864] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- RoWorld
 }
 
 local Url = Places[game.PlaceId]
