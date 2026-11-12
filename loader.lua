@@ -41,7 +41,11 @@ local Places = {
 	[137151641329864] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- RoWorld
 }
 
-local Url = Places[game.PlaceId]
+local Universes = {
+	[10771053183] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- Net a Fish!
+}
+
+local Url = Places[game.PlaceId] or Universes[game.GameId]
 if not Url then
 	Log("game " .. tostring(game.PlaceId) .. " is not supported")
 	Notify("This game is not supported (PlaceId " .. tostring(game.PlaceId) .. ")")
