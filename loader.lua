@@ -47,6 +47,7 @@ local Places = {
 }
 
 local Universes = {
+	[10775182046] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Throw a Seed
 	[10771053183] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- Net a Fish!
 	[5595353122] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- Slayers 2
 }
