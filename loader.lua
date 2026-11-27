@@ -23,34 +23,41 @@ end
 local Self = "https://raw.githubusercontent.com/mammot41038-beep/MTwin-UI/main/loader.lua"
 
 local Places = {
-	[79389059854988] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- My Anime Mine
-	[8304191830] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Anime Adventures
-	[14229839966] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Anime Adventures
-	[14918509670] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Anime Adventures
-	[8349889591] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Anime Adventures
-	[10098525303] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Anime Adventures
-	[14229762361] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Anime Adventures
-	[132929771812494] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Cameraman Tower Defense
-	[114068177100380] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Cameraman Tower Defense
-	[72858262610964] = "https://api.luarmor.net/files/v4/loaders/ace673399f74082818e13b3a038e796b.lua", -- Tap Simulator REBORN
-	[114326934417838] = "https://api.luarmor.net/files/v4/loaders/ace673399f74082818e13b3a038e796b.lua", -- Break and Steal an Egg
-	[97617452700163] = "https://api.luarmor.net/files/v4/loaders/ace673399f74082818e13b3a038e796b.lua", -- +1 Anime Eyes
-	[120219252362013] = "https://api.luarmor.net/files/v4/loaders/ace673399f74082818e13b3a038e796b.lua", -- Throw Food For Animals
-	[113290951185459] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- Anime Dice
-	[79546208627805] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- 99 Nights in the Forest
-	[126509999114328] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- 99 Nights in the Forest
-	[142823291] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- Murder Mystery 2
-	[137151641329864] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- RoWorld
-	[16205713724] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- Slayers 2
-	[136406881576517] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- Slayers 2
-	[75556147183481] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- Slayers 2
+	[79389059854988] = "https://api.luarmor.net/files/v4/loaders/a2b34aecda55a66d3fb16954c5c4a849.lua", -- My Anime Mine
+	[142823291] = "https://api.luarmor.net/files/v4/loaders/a2b34aecda55a66d3fb16954c5c4a849.lua", -- Murder Mystery 2
+	[113290951185459] = "https://api.luarmor.net/files/v4/loaders/ea5bcd6a6dc4122a0f7c06bf0c498154.lua", -- Anime Dice
+	[8304191830] = "https://api.luarmor.net/files/v4/loaders/ea5bcd6a6dc4122a0f7c06bf0c498154.lua", -- Anime Adventures
+	[14229839966] = "https://api.luarmor.net/files/v4/loaders/ea5bcd6a6dc4122a0f7c06bf0c498154.lua", -- Anime Adventures
+	[14918509670] = "https://api.luarmor.net/files/v4/loaders/ea5bcd6a6dc4122a0f7c06bf0c498154.lua", -- Anime Adventures
+	[8349889591] = "https://api.luarmor.net/files/v4/loaders/ea5bcd6a6dc4122a0f7c06bf0c498154.lua", -- Anime Adventures
+	[10098525303] = "https://api.luarmor.net/files/v4/loaders/ea5bcd6a6dc4122a0f7c06bf0c498154.lua", -- Anime Adventures
+	[14229762361] = "https://api.luarmor.net/files/v4/loaders/ea5bcd6a6dc4122a0f7c06bf0c498154.lua", -- Anime Adventures
+	[79546208627805] = "https://api.luarmor.net/files/v4/loaders/81283a746e3ce8771a8a09a8c621545c.lua", -- 99 Nights in the Forest
+	[126509999114328] = "https://api.luarmor.net/files/v4/loaders/81283a746e3ce8771a8a09a8c621545c.lua", -- 99 Nights in the Forest
+	[132929771812494] = "https://api.luarmor.net/files/v4/loaders/81283a746e3ce8771a8a09a8c621545c.lua", -- Cameraman Tower Defense
+	[114068177100380] = "https://api.luarmor.net/files/v4/loaders/81283a746e3ce8771a8a09a8c621545c.lua", -- Cameraman Tower Defense
+	[114326934417838] = "https://api.luarmor.net/files/v4/loaders/ca60b5435fd330df725341db75e01792.lua", -- Break and Steal an Egg
+	[97617452700163] = "https://api.luarmor.net/files/v4/loaders/6e5cca0d3b340f2214eb50c373b9df3b.lua", -- +1 Anime Eyes
+	[137151641329864] = "https://api.luarmor.net/files/v4/loaders/6e5cca0d3b340f2214eb50c373b9df3b.lua", -- RoWorld
+	[120219252362013] = "https://api.luarmor.net/files/v4/loaders/6e5cca0d3b340f2214eb50c373b9df3b.lua", -- Throw Food For Animals
+	[72858262610964] = "https://api.luarmor.net/files/v4/loaders/ed0beadfb9c764375a8c297aefc4efb4.lua", -- Tap Simulator REBORN
+	[16205713724] = "https://api.luarmor.net/files/v4/loaders/7eab7d5aae33a051aff8952c79bc0519.lua", -- Slayers 2
+	[136406881576517] = "https://api.luarmor.net/files/v4/loaders/7eab7d5aae33a051aff8952c79bc0519.lua", -- Slayers 2
+	[75556147183481] = "https://api.luarmor.net/files/v4/loaders/7eab7d5aae33a051aff8952c79bc0519.lua", -- Slayers 2
 }
 
 local Universes = {
+<<<<<<< Updated upstream
 	[10775182046] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Throw a Seed
 	[10771053183] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- Net a Fish!
 	[5595353122] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- Slayers 2
 	[10778033190] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- Anime Champions X
+=======
+	[10775182046] = "https://api.luarmor.net/files/v4/loaders/ca60b5435fd330df725341db75e01792.lua", -- Throw a Seed
+	[10778033190] = "https://api.luarmor.net/files/v4/loaders/6e5cca0d3b340f2214eb50c373b9df3b.lua", -- Anime Champions X
+	[10771053183] = "https://api.luarmor.net/files/v4/loaders/ed0beadfb9c764375a8c297aefc4efb4.lua", -- Net a Fish!
+	[5595353122] = "https://api.luarmor.net/files/v4/loaders/7eab7d5aae33a051aff8952c79bc0519.lua", -- Slayers 2
+>>>>>>> Stashed changes
 }
 
 local Url = Places[game.PlaceId] or Universes[game.GameId]
