@@ -47,17 +47,10 @@ local Places = {
 }
 
 local Universes = {
-<<<<<<< Updated upstream
-	[10775182046] = "https://api.luarmor.net/files/v4/loaders/8fbd3c15e602fca69858ae963eb61375.lua", -- Throw a Seed
-	[10771053183] = "https://api.luarmor.net/files/v4/loaders/2b05127902f94b4c0b6458a40c852dc1.lua", -- Net a Fish!
-	[5595353122] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- Slayers 2
-	[10778033190] = "https://api.luarmor.net/files/v4/loaders/bcb1fb290cb506ca730fd30ca4ed3559.lua", -- Anime Champions X
-=======
 	[10775182046] = "https://api.luarmor.net/files/v4/loaders/ca60b5435fd330df725341db75e01792.lua", -- Throw a Seed
 	[10778033190] = "https://api.luarmor.net/files/v4/loaders/6e5cca0d3b340f2214eb50c373b9df3b.lua", -- Anime Champions X
 	[10771053183] = "https://api.luarmor.net/files/v4/loaders/ed0beadfb9c764375a8c297aefc4efb4.lua", -- Net a Fish!
 	[5595353122] = "https://api.luarmor.net/files/v4/loaders/7eab7d5aae33a051aff8952c79bc0519.lua", -- Slayers 2
->>>>>>> Stashed changes
 }
 
 local Url = Places[game.PlaceId] or Universes[game.GameId]
