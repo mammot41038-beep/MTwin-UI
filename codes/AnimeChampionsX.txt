@@ -1,1 +1,2 @@
 # Anime Champions X codes, one per line (# = note). Read by the hub every 30 minutes.
+RELEASE
